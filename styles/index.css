@@ -92,7 +92,7 @@ nav .more {
 }
 
 .slider-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/mountain-bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url("../images/mountain-bg.jpg");
   background-size: cover;
   background-position: center;
   padding: 80px 20px;
@@ -131,7 +131,7 @@ nav .more {
 }
 
 .blog-section {
-  background: #ecf0f1;
+  background: white;
   padding: 80px 20px;
   text-align: center;
 }
@@ -232,15 +232,19 @@ footer .main-footer {
   text-align: right;
 }
 
+@media (max-width: 1024px) {
+  .card-section .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-section .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-  }
-  .card-grid,
-  .blog-grid {
-    grid-template-columns: 1fr;
   }
   .welcome h1 {
     font-size: 45px;

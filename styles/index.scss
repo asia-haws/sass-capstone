@@ -1,6 +1,8 @@
 $primary: #e91e63;
 $dark: #2c3e50;
+$dark-text: #3c4858;
 $light-gray: #7f8c8d;
+$light-gray-text: $light-gray;
 $font-main: "Roboto", sans-serif;
 $font-accent: "Roboto Slab", serif;
 
@@ -20,23 +22,52 @@ body {
   padding: 50px;
 }
 
-nav {
+.main-nav {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  a {
+
+  .nav-brand a {
+    font-size: 20px;
+    font-weight: 350;
     color: white;
     text-decoration: none;
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: 300;
   }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-  .more {
-    padding: 12px 25px;
-    border-radius: 60px;
-    background-color: $primary;
+    a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 13px;
+      padding: 0 15px;
+      &:hover,
+      &.active {
+        color: $primary;
+      }
+    }
+    .btn-more {
+      background-color: $primary;
+      padding: 20px 25px;
+      border-radius: 30px;
+
+      font-weight: 200;
+      font-size: 13px;
+      line-height: 1;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      &:hover {
+        color: white;
+      }
+    }
   }
 }
 
@@ -46,7 +77,6 @@ nav {
   align-items: center;
   text-align: center;
   margin: 90px auto;
-
   h1 {
     font-size: 67px;
     color: white;
@@ -72,20 +102,17 @@ nav {
   padding: 60px 20px;
   border-radius: 5px;
   text-align: center;
-
   h2 {
     font-family: $font-accent;
     font-size: 37px;
     color: $dark;
   }
-
   .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 70px;
     margin-bottom: 100px;
-
     .grid-item {
       h5 {
         font-family: $font-accent;
@@ -113,7 +140,6 @@ nav {
   background-position: center;
   padding: 80px 20px;
   color: white;
-
   .slider-content {
     display: flex;
     max-width: 1100px;
@@ -121,11 +147,9 @@ nav {
     align-items: center;
     gap: 40px;
   }
-
   .slider-text {
     flex: 1;
     text-align: left;
-
     h1 {
       font-family: $font-accent;
       font-size: 37px;
@@ -137,7 +161,6 @@ nav {
       max-width: none;
     }
   }
-
   .slider-image {
     flex: 1;
     text-align: right;
@@ -154,31 +177,26 @@ nav {
   background: white;
   padding: 80px 20px;
   text-align: center;
-
   h2 {
     font-family: $font-accent;
     color: $dark;
     font-size: 36px;
     margin-bottom: 50px;
   }
-
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     justify-items: center;
-
     .blog-item {
       text-align: center;
       max-width: 300px;
-
       h4 {
         font-size: 14px;
         text-transform: uppercase;
         font-weight: 300;
         margin-bottom: 5px;
       }
-
       &.blog-item-1 h4 {
         color: #89229b;
       }
@@ -188,7 +206,6 @@ nav {
       &.blog-item-3 h4 {
         color: #ff9800;
       }
-
       h3 {
         color: $dark;
         font-family: $font-accent;
@@ -216,14 +233,11 @@ footer {
   width: 100%;
   padding: 0;
   box-sizing: border-box;
-
   .footer-content {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
     width: 100%;
-
     .contact {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("../images/mountain-bg.jpg");
@@ -232,13 +246,11 @@ footer {
       background-repeat: no-repeat;
       padding: 80px 50px;
       text-align: left;
-
       h2 {
         font-family: $font-accent;
         font-size: 36px;
         margin-bottom: 20px;
       }
-
       p {
         font-size: 16px;
         font-weight: 300;
@@ -246,19 +258,16 @@ footer {
         margin: 10px 0;
         max-width: 600px;
       }
-
       h4 {
         font-size: 18px;
         font-weight: 500;
         margin-top: 25px;
-
         i {
           margin-right: 10px;
         }
       }
     }
   }
-
   .main-footer {
     background-color: #3c4858;
     padding: 20px;
@@ -276,18 +285,15 @@ footer {
   }
 }
 
-
 @media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
   }
-
   .welcome h1 {
     font-size: 45px;
   }
-
   .slider-section .slider-content {
     flex-direction: column;
     text-align: center;
@@ -298,10 +304,10 @@ footer {
   .slider-section .slider-image {
     text-align: center;
   }
-
   footer .footer-content {
     flex-direction: column;
     gap: 40px;
+    align-items: center;
   }
   footer .contact {
     max-width: 100%;
